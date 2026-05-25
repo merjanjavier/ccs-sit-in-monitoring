@@ -3,16 +3,28 @@ const path = require('path');
 const dotenv = require('dotenv');
 dotenv.config();
 
-const client = createClient({
-  url: process.env.TURSO_DATABASE_URL || 'file:ccs_database.db',
-  authToken: process.env.TURSO_AUTH_TOKEN
-});
+// Check if running in a read-only serverless environment (like Vercel) without a remote database configured
+const isServerlessWithoutDb = (process.env.VERCEL || process.env.NODE_ENV === 'production') && !process.env.TURSO_DATABASE_URL;
+
+let client = null;
+if (!isServerlessWithoutDb) {
+  client = createClient({
+    url: process.env.TURSO_DATABASE_URL || 'file:ccs_database.db',
+    authToken: process.env.TURSO_AUTH_TOKEN
+  });
+} else {
+  console.warn('WARNING: Running in serverless environment without TURSO_DATABASE_URL. Database operations will fail gracefully.');
+}
 
 const db = {
   run: async (sql, params, callback) => {
     if (typeof params === 'function') {
       callback = params;
       params = [];
+    }
+    if (isServerlessWithoutDb) {
+      if (callback) return callback(new Error('Database not configured. Please set TURSO_DATABASE_URL in Vercel.'));
+      return;
     }
     try {
       const result = await client.execute({ sql, args: params || [] });
@@ -27,6 +39,10 @@ const db = {
       callback = params;
       params = [];
     }
+    if (isServerlessWithoutDb) {
+      if (callback) return callback(new Error('Database not configured. Please set TURSO_DATABASE_URL in Vercel.'));
+      return;
+    }
     try {
       const result = await client.execute({ sql, args: params || [] });
       if (callback) callback(null, result.rows.length > 0 ? result.rows[0] : undefined);
@@ -39,6 +55,10 @@ const db = {
       callback = params;
       params = [];
     }
+    if (isServerlessWithoutDb) {
+      if (callback) return callback(new Error('Database not configured. Please set TURSO_DATABASE_URL in Vercel.'));
+      return;
+    }
     try {
       const result = await client.execute({ sql, args: params || [] });
       if (callback) callback(null, result.rows);
@@ -49,6 +69,10 @@ const db = {
   prepare: (sql) => {
     return {
       run: (param) => {
+        if (isServerlessWithoutDb) {
+          console.error('Database not configured. Please set TURSO_DATABASE_URL in Vercel.');
+          return;
+        }
         client.execute({ sql, args: [param] }).catch(err => console.error(err));
       },
       finalize: () => {}
@@ -56,8 +80,12 @@ const db = {
   }
 };
 
-console.log('Connected to Turso/LibSQL database');
-initializeDatabase();
+if (!isServerlessWithoutDb) {
+  console.log('Connected to Turso/LibSQL database');
+  initializeDatabase();
+} else {
+  console.log('Skipped database initialization (Serverless environment missing DB URL)');
+}
 
 // Initialize database tables
 function initializeDatabase() {
