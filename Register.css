@@ -6,7 +6,7 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: radial-gradient(circle at top left, rgba(46, 219, 206, 0.18), transparent 22%),
+  background: radial-gradient(circle at top left, rgba(217, 70, 239, 0.18), transparent 22%),
               radial-gradient(circle at bottom right, rgba(12, 169, 159, 0.16), transparent 18%),
               linear-gradient(135deg, #082339 0%, #11456c 100%);
   color: #f7fafc;
@@ -96,7 +96,7 @@ main {
 
 .container-left h1 {
   margin: 0;
-  color: #102840;
+  color: #1c102b;
   font-size: clamp(2.2rem, 3vw, 3rem);
   text-align: center;
 }
@@ -122,10 +122,10 @@ form select {
   width: 100%;
   min-height: 50px;
   padding: 16px 18px;
-  border: 1px solid rgba(15, 50, 78, 0.14);
+  border: 1px solid rgba(28, 16, 43, 0.14);
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.96);
-  color: #102840;
+  color: #1c102b;
   font-size: 0.98rem;
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
@@ -133,8 +133,8 @@ form select {
 form input:focus,
 form select:focus {
   outline: none;
-  border-color: #3fc2b8;
-  box-shadow: 0 0 0 4px rgba(63, 194, 184, 0.14);
+  border-color: #a21caf;
+  box-shadow: 0 0 0 4px rgba(217, 70, 239, 0.14);
 }
 
 .btn button {
@@ -145,7 +145,7 @@ form select:focus {
   font-size: 1rem;
   font-weight: 700;
   color: white;
-  background: linear-gradient(135deg, #2edbce, #1aa79d);
+  background: linear-gradient(135deg, #d946ef, #a21caf);
   cursor: pointer;
   transition: transform 0.2s ease, filter 0.2s ease;
 }

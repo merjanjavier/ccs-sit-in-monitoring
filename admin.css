@@ -1,14 +1,14 @@
 /* Admin dashboard theme */
 :root {
-  --bg-start: #041926;
-  --bg-end: #0f3d5f;
+  --bg-start: #130927;
+  --bg-end: #30134a;
   --panel: rgba(255, 255, 255, 0.92);
   --panel-strong: rgba(255, 255, 255, 0.98);
-  --text-main: #112a45;
-  --text-muted: #536d86;
-  --accent: #52c7b8;
-  --accent-strong: #1aa79d;
-  --border: rgba(16, 36, 61, 0.14);
+  --text-main: #1c102b;
+  --text-muted: #6d5b7a;
+  --accent: #d946ef;
+  --accent-strong: #a21caf;
+  --border: rgba(28, 16, 43, 0.14);
   --shadow: 0 24px 60px rgba(3, 18, 37, 0.16);
 }
 
@@ -20,7 +20,7 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(180deg, #071824 0%, #102f4b 55%, #163f5f 100%);
+  background: linear-gradient(180deg, #130927 0%, #30134a 55%, #30134a 100%);
   color: var(--text-main);
   min-height: 100vh;
 }
@@ -34,7 +34,7 @@ body {
   align-items: center;
   gap: 20px;
   padding: 18px 5vw;
-  background: rgba(9, 28, 48, 0.92);
+  background: rgba(19, 9, 39, 0.92);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
@@ -88,7 +88,7 @@ body {
 
 .nav-link:hover,
 .nav-link.active {
-  background: rgba(82, 199, 184, 0.16);
+  background: rgba(217, 70, 239, 0.16);
   color: #ffffff;
 }
 
@@ -121,13 +121,13 @@ body {
 .dropdown-item {
   display: block;
   padding: 12px 20px;
-  color: #1b3b55;
+  color: #1c102b;
   text-decoration: none;
   transition: background 0.2s ease;
 }
 
 .dropdown-item:hover {
-  background: rgba(82, 199, 184, 0.14);
+  background: rgba(217, 70, 239, 0.14);
 }
 
 .nav-actions {
@@ -215,20 +215,20 @@ body {
 
 .column {
   background: rgba(255, 255, 255, 0.94);
-  border: 1px solid rgba(15, 50, 78, 0.12);
+  border: 1px solid rgba(28, 16, 43, 0.12);
   border-radius: 28px;
   box-shadow: var(--shadow);
 }
 
 .card-header {
-  background: linear-gradient(135deg, rgba(82, 199, 184, 0.16), rgba(15, 51, 75, 0.12));
+  background: linear-gradient(135deg, rgba(217, 70, 239, 0.16), rgba(28, 16, 43, 0.12));
   padding: 24px 28px;
-  border-bottom: 1px solid rgba(15, 50, 78, 0.08);
+  border-bottom: 1px solid rgba(28, 16, 43, 0.08);
 }
 
 .card-header h2 {
   margin: 0;
-  color: #0f354f;
+  color: #1c102b;
   font-size: 1.3rem;
 }
 
@@ -244,20 +244,20 @@ body {
   align-items: center;
   padding: 18px 20px;
   border-radius: 18px;
-  background: rgba(15, 51, 75, 0.04);
-  border: 1px solid rgba(15, 51, 75, 0.08);
+  background: rgba(28, 16, 43, 0.04);
+  border: 1px solid rgba(28, 16, 43, 0.08);
 }
 
 .stat-label {
   font-size: 0.96rem;
-  color: #415b76;
+  color: #6d5b7a;
   font-weight: 600;
 }
 
 .stat-value {
   font-size: 1.8rem;
   font-weight: 800;
-  color: #102840;
+  color: #1c102b;
 }
 
 .language-graph {
@@ -277,7 +277,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #5b748a;
+  color: #6d5b7a;
   font-size: 0.87rem;
 }
 
@@ -323,17 +323,17 @@ body {
   min-height: 150px;
   padding: 18px;
   border-radius: 20px;
-  border: 1px solid rgba(15, 51, 75, 0.12);
+  border: 1px solid rgba(28, 16, 43, 0.12);
   background: rgba(255, 255, 255, 0.96);
   font-size: 1rem;
-  color: #102840;
+  color: #1c102b;
   resize: vertical;
 }
 
 .post-announcement textarea:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 4px rgba(82, 199, 184, 0.14);
+  box-shadow: 0 0 0 4px rgba(217, 70, 239, 0.14);
 }
 
 .submit-btn {
@@ -341,8 +341,8 @@ body {
   padding: 14px 24px;
   border-radius: 999px;
   border: none;
-  background: linear-gradient(135deg, var(--accent), #0bbbad);
-  color: #0f334b;
+  background: linear-gradient(135deg, var(--accent), #d946ef);
+  color: #1c102b;
   font-weight: 700;
   cursor: pointer;
 }
@@ -357,7 +357,7 @@ body {
 
 .posted-announcements h3 {
   margin: 0 0 18px;
-  color: #0f334b;
+  color: #1c102b;
   font-size: 1.05rem;
 }
 
@@ -371,25 +371,25 @@ body {
 .announcement-item {
   padding: 18px 20px;
   border-radius: 18px;
-  background: rgba(15, 51, 75, 0.03);
-  border: 1px solid rgba(15, 51, 75, 0.08);
+  background: rgba(28, 16, 43, 0.03);
+  border: 1px solid rgba(28, 16, 43, 0.08);
 }
 
 .announcement-date {
   font-size: 0.82rem;
-  color: #5b748a;
+  color: #6d5b7a;
   margin-bottom: 10px;
 }
 
 .announcement-content {
   font-size: 0.98rem;
-  color: #31455f;
+  color: #6d5b7a;
   line-height: 1.65;
 }
 
 .no-announcements {
   text-align: center;
-  color: #6d8398;
+  color: #6d5b7a;
   padding: 36px 12px;
 }
 
@@ -413,7 +413,7 @@ body {
   background: rgba(255, 255, 255, 0.96);
   border-radius: 28px;
   padding: 30px;
-  border: 1px solid rgba(15, 51, 75, 0.12);
+  border: 1px solid rgba(28, 16, 43, 0.12);
   box-shadow: var(--shadow);
 }
 
@@ -424,7 +424,7 @@ body {
 .section-title h2 {
   margin: 0 0 24px;
   font-size: 1.85rem;
-  color: #102840;
+  color: #1c102b;
   display: inline-flex;
   align-items: center;
   gap: 12px;
@@ -443,7 +443,7 @@ body {
   padding: 28px 20px 20px;
   border-radius: 28px;
   background: linear-gradient(180deg, #ffffff, #f7fafc);
-  box-shadow: 0 24px 50px rgba(15, 50, 78, 0.1);
+  box-shadow: 0 24px 50px rgba(28, 16, 43, 0.1);
   position: relative;
   text-align: center;
 }
@@ -452,12 +452,12 @@ body {
   width: 72px;
   height: 72px;
   margin: 0 auto 16px;
-  background: rgba(82, 199, 184, 0.16);
+  background: rgba(217, 70, 239, 0.16);
   border-radius: 50%;
   display: grid;
   place-items: center;
   font-size: 1.5rem;
-  color: #0f334b;
+  color: #1c102b;
   font-weight: 700;
 }
 
@@ -473,7 +473,7 @@ body {
   place-items: center;
   color: white;
   font-weight: 700;
-  box-shadow: 0 12px 20px rgba(15, 50, 78, 0.18);
+  box-shadow: 0 12px 20px rgba(28, 16, 43, 0.18);
 }
 
 .podium-item.first .podium-rank {
@@ -496,7 +496,7 @@ body {
   margin: 0 0 8px;
   font-size: 1rem;
   font-weight: 700;
-  color: #0f334b;
+  color: #1c102b;
 }
 
 .podium-points {
@@ -508,7 +508,7 @@ body {
   background: rgba(255, 255, 255, 0.96);
   border-radius: 28px;
   padding: 26px;
-  box-shadow: 0 22px 50px rgba(15, 50, 78, 0.08);
+  box-shadow: 0 22px 50px rgba(28, 16, 43, 0.08);
 }
 
 .full-leaderboard-section .section-header {
@@ -523,22 +523,22 @@ body {
 .full-leaderboard-section h2 {
   margin: 0;
   font-size: 1.5rem;
-  color: #102840;
+  color: #1c102b;
 }
 
 .table-search input {
   width: min(280px, 100%);
   padding: 12px 18px;
   border-radius: 999px;
-  border: 1px solid rgba(15, 51, 75, 0.12);
+  border: 1px solid rgba(28, 16, 43, 0.12);
   background: rgba(255, 255, 255, 0.9);
-  color: #102840;
+  color: #1c102b;
 }
 
 .table-search input:focus {
   outline: none;
-  border-color: #3fc2b8;
-  box-shadow: 0 0 0 4px rgba(63, 194, 184, 0.12);
+  border-color: #a21caf;
+  box-shadow: 0 0 0 4px rgba(217, 70, 239, 0.12);
 }
 
 .table-container {
@@ -553,18 +553,18 @@ body {
 .leaderboard-table th,
 .leaderboard-table td {
   padding: 16px 18px;
-  border-bottom: 1px solid rgba(15, 51, 75, 0.08);
+  border-bottom: 1px solid rgba(28, 16, 43, 0.08);
 }
 
 .leaderboard-table th {
   text-align: left;
-  color: #102840;
+  color: #1c102b;
   font-weight: 700;
-  background: rgba(15, 51, 75, 0.04);
+  background: rgba(28, 16, 43, 0.04);
 }
 
 .leaderboard-table tbody tr:hover {
-  background: rgba(63, 194, 184, 0.08);
+  background: rgba(217, 70, 239, 0.08);
 }
 
 @media (max-width: 1024px) {
@@ -578,7 +578,7 @@ body {
     top: 100%;
     left: 0;
     right: 0;
-    background-color: rgba(9, 28, 48, 0.96);
+    background-color: rgba(19, 9, 39, 0.96);
     flex-direction: column;
     padding: 20px;
     gap: 10px;
@@ -700,7 +700,7 @@ body {
 }
 
 .modal-header {
-  background-color: #102840;
+  background-color: #1c102b;
   color: white;
   padding: 20px 25px;
   border-radius: 20px 20px 0 0;
@@ -741,7 +741,7 @@ body {
   display: block;
   font-size: 14px;
   font-weight: 600;
-  color: #102840;
+  color: #1c102b;
   margin-bottom: 10px;
 }
 
