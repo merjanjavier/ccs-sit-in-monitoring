@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Register.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <title>CCS Sit-in Monitoring System</title>
+  </head>
+  <body>
+    <div class="nav">
+      <div class="logo">
+        <img
+          src="./images/uclogono.png"
+          class="img"
+          alt="uclogo"
+        />
+        <p class="title">CCS Sit-in Monitoring System</p>
+      </div>
+
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="#community">Community</a>
+        <a href="#about">About</a>
+        <a href="Login.html">Login</a>
+        <a href="Register.html">Register</a>
+      </div>
+      
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <main>
+      <section class="Register animate__animated animate__fadeInUp">
+        <div class="container-left">
+          <h1 style="margin-top: 0; line-height: 1.2;">Create Your Account</h1>
+          <form action="">
+            <div class="input-text">
+              <label for="number">ID Number</label>
+              <input type="text" id="number" placeholder=" " />
+            </div>
+
+            <div class="input-text">
+              <label for="lastname">Last Name</label>
+              <input type="text" id="lastname" placeholder=" " />
+            </div>
+
+            <div class="input-text">
+              <label for="firstname">First Name</label>
+              <input type="text" id="firstname" placeholder=" " />
+            </div>
+
+            <div class="input-text-group">
+              <div class="input-text">
+                <label for="middlename">Middle Name</label>
+                <input type="text" id="middlename" placeholder=" " />
+              </div>
+              <div class="checkbox-container">
+                <input type="checkbox" id="noMiddleNameCheckbox" />
+                <label for="noMiddleNameCheckbox">No Middle Name</label>
+              </div>
+            </div>
+            <div class="input-text">
+                <label for="course">Select Course</label>
+                <select id="course" required>
+                  <option value="" disabled selected>Select Course</option>
+                </select>
+            </div>
+            <div class="input-text">
+                <label for="courselevel">Select Course Level</label>
+                <select id="courselevel" required>
+                  <option value="" disabled selected>Select Course Level</option>
+                </select>
+            </div>
+          </form>
+        </div>
+
+          <div class="container-right">
+            <h1 style="margin-top: 0; line-height: 1.2; visibility: hidden; pointer-events: none; user-select: none;">Create Your Account</h1>
+            <form action="">
+            <div class="input-text">
+              <label for="address">Address</label>
+              <input type="text" id="address" placeholder=" " />
+            </div>
+
+            <div class="input-text">
+              <label for="email">Email</label>
+              <input type="text" id="email" placeholder=" " />
+            </div>
+
+            <div class="input-text-group">
+              <div class="input-text">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder=" " />
+              </div>
+              <div id="passwordFeedback" class="feedback-msg"></div>
+            </div>
+
+            <div class="input-text-group">
+              <div class="input-text">
+                <label for="confirmPassword">Repeat Password</label>
+                <input type="password" id="confirmPassword" placeholder=" " />
+              </div>
+              <div id="confirmPasswordFeedback" class="feedback-msg"></div>
+            </div>
+
+            <div class="btn">
+              <button type="button">Register</button>
+            </div>
+            
+            <div class="login-link">
+              <p>Already have an account? <a href="Login.html">Login here</a></p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <script src="register.js"></script>
+  </body>
+</html>

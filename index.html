@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <title>CCS Sit-in Monitoring System</title>
+  </head>
+  <body>
+    <div class="nav">
+      <div class="logo">
+        <img
+          src="./images/uclogono.png"
+          class="img"
+          alt="uclogo"
+        />
+        <p class="title">CCS Sit-in Monitoring System</p>
+      </div>
+
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="#leaderboard">Leaderboard</a>
+        <a href="#about">About</a>
+        <a href="Login.html">Login</a>
+        <a href="Register.html">Register</a>
+      </div>
+      
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div class="main">
+      <div class="content">
+        <img
+          src="./images/ucmainccslogo1.png"
+          alt="CCS Logo"
+          class="main-logo"
+        />
+        <h1 class="welcome-text">Welcome to CCS Sit-in Monitoring System</h1>
+        <p class="subtitle">Track and manage student attendance efficiently</p>
+        
+        <div class="cta-buttons">
+          <a href="Register.html" class="btn-primary">Get Started</a>
+          <a href="#leaderboard" class="btn-secondary">View Leaderboard</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Leaderboard Preview Section -->
+    <div id="leaderboard" class="leaderboard-section">
+      <div class="leaderboard-header">
+        <h2 class="section-title"><i class="fa-solid fa-crown"></i> Sit-in Leaderboard Preview</h2>
+        <p class="section-subtitle">Real-time standings of top students tracking their lab hours</p>
+      </div>
+
+      <div class="leaderboard-grid">
+        <!-- Top 3 Podium Card -->
+        <div class="leaderboard-card podium-card animate__animated animate__fadeInLeft">
+          <h3 class="card-title"><i class="fa-solid fa-trophy"></i> Top 3 Performers</h3>
+          <div class="podium-wrapper" id="landingPodiumContainer">
+            <div class="loading-state">
+              <div class="spinner"></div>
+              <p>Loading podium standings...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ranks 4-10 Card -->
+        <div class="leaderboard-card list-card animate__animated animate__fadeInRight">
+          <h3 class="card-title"><i class="fa-solid fa-list-ol"></i> Ranks 4 – 10</h3>
+          <div class="preview-table-container">
+            <table class="preview-table">
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Student</th>
+                  <th>Course</th>
+                  <th>Points</th>
+                </tr>
+              </thead>
+              <tbody id="landingLeaderboardBody">
+                <tr>
+                  <td colspan="4" class="loading-cell">
+                    <div class="spinner-small"></div>
+                    <span>Loading top rankings...</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="view-more-container">
+            <a href="Login.html" class="btn-view-more">
+              Log In to View Full Leaderboard <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="landing-leaderboard.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const links = document.querySelector('.links');
+        if (menuToggle && links) {
+          menuToggle.addEventListener('click', function() {
+            links.classList.toggle('active');
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

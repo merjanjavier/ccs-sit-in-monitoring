@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Login.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <title>CCS Sit-in Monitoring System - Login</title>
+  </head>
+  <body>
+    <div class="nav">
+      <div class="logo">
+        <img
+          src="./images/uclogono.png"
+          class="img"
+          alt="uclogo"
+        />
+        <p class="title">CCS Sit-in Monitoring System</p>
+      </div>
+
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="#community">Community</a>
+        <a href="#about">About</a>
+        <a href="Login.html">Login</a>
+        <a href="Register.html">Register</a>
+      </div>
+      
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <main>
+      <section class="Login animate__animated animate__fadeInUp">
+        <div class="login-container">
+          <div class="login-header">
+            <img
+              src="./images/ucmainccslogo1.png"
+              alt="CCS Logo"
+              class="login-logo"
+            />
+            <h1>Welcome Back</h1>
+            <p class="subtitle">Please login to your account</p>
+          </div>
+
+          <form action="">
+            <div class="input-text">
+              <input type="text" id="idnumber" placeholder=" " />
+              <label for="idnumber">ID Number</label>
+            </div>
+
+            <div class="input-text">
+              <input type="password" id="password" placeholder=" " />
+              <label for="password">Password</label>
+            </div>
+
+            <div class="remember-forgot">
+              <div class="remember">
+                <input type="checkbox" id="remember" />
+                <label for="remember">Remember me</label>
+              </div>
+              <a href="#" class="forgot-link">Forgot Password?</a>
+            </div>
+
+            <div class="btn">
+              <button type="submit">Login</button>
+            </div>
+
+            <div class="register-link">
+              <p>Don't have an account? <a href="Register.html">Register here</a></p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <script src="login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="Profile.css" />
+    <link rel="stylesheet" href="Leaderboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <title>CCS Dashboard - Leaderboard</title>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <div class="nav">
+      <div class="logo">
+        <p class="dashboard-text">Dashboard</p>
+      </div>
+
+      <div class="links">
+        <a href="Profile.html">Home</a>
+        <a href="Profile.html#editprofile">Edit Profile</a>
+        <a href="summary.html">Sit-In Summary</a>
+        <a href="sessions.html">Sessions</a>
+        <a href="history.html">History</a>
+        <a href="Leaderboard.html" class="active">Leaderboard</a>
+        <a href="reservation.html">Reservation</a>
+      </div>
+
+      <div class="nav-actions">
+        <div class="notification-container">
+          <button id="notifBtn" class="notif-btn" title="Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span id="notifBadge" class="notif-badge" style="display: none;">0</span>
+          </button>
+          <div id="notifDropdown" class="notif-dropdown">
+            <div class="notif-header">
+              <h3>Notifications</h3>
+              <button id="markAllReadBtn">Mark all as read</button>
+            </div>
+            <div id="notifList" class="notif-list">
+              <div class="no-notif">No new notifications</div>
+            </div>
+          </div>
+        </div>
+        <button id="logoutBtn" class="logout-btn">Log Out</button>
+      </div>
+      
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      <div class="leaderboard-container animate__animated animate__fadeIn">
+        
+        <!-- Top Stats Row -->
+        <div class="stats-row">
+          <!-- My Performance Card -->
+          <div class="stat-card my-performance-card">
+            <div class="card-header">
+              <h3><i class="fa-solid fa-user-graduate"></i> My Performance</h3>
+            </div>
+            <div class="performance-stats">
+              <div class="stat-item">
+                <span class="stat-label">Your Rank</span>
+                <span class="stat-value" id="myRank">#--</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Total Points</span>
+                <span class="stat-value" id="myPoints">0</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Total Time</span>
+                <span class="stat-value" id="myTime">0h 0m</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Scoring Breakdown Card -->
+          <div class="stat-card scoring-card">
+            <div class="card-header">
+              <h3><i class="fa-solid fa-circle-info"></i> Scoring Breakdown</h3>
+            </div>
+            <div class="scoring-content">
+              <div class="score-rule">
+                <span class="rule-icon">🕒</span>
+                <p>1 Minute = 1 Point</p>
+              </div>
+              <div class="score-rule">
+                <span class="rule-icon">💻</span>
+                <p>Completion = 10 Bonus</p>
+              </div>
+              <p class="score-note">Points are updated automatically after each session.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Top Performers Section -->
+        <div class="top-performers-section">
+          <div class="section-title">
+            <h2><i class="fa-solid fa-crown"></i> Top Performers</h2>
+          </div>
+          <div class="podium" id="topPerformersContainer">
+            <!-- Top 3 will be loaded here -->
+            <div class="podium-item second">
+              <div class="avatar">?</div>
+              <div class="podium-rank">2</div>
+              <div class="podium-name">Loading...</div>
+              <div class="podium-points">-- pts</div>
+            </div>
+            <div class="podium-item first">
+              <div class="avatar">?</div>
+              <div class="podium-rank">1</div>
+              <div class="podium-name">Loading...</div>
+              <div class="podium-points">-- pts</div>
+            </div>
+            <div class="podium-item third">
+              <div class="avatar">?</div>
+              <div class="podium-rank">3</div>
+              <div class="podium-name">Loading...</div>
+              <div class="podium-points">-- pts</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Full Leaderboard Table -->
+        <div class="full-leaderboard-section">
+          <div class="section-header">
+            <h2><i class="fa-solid fa-list-ol"></i> Full Leaderboard</h2>
+            <div class="table-search">
+              <input type="text" id="leaderboardSearch" placeholder="Search student name..." />
+            </div>
+          </div>
+          <div class="table-container">
+            <table class="leaderboard-table">
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Student</th>
+                  <th>Course & Year</th>
+                  <th>Sessions</th>
+                  <th>Total Time</th>
+                  <th>Points</th>
+                </tr>
+              </thead>
+              <tbody id="leaderboardTableBody">
+                <!-- Leaderboard data will be loaded here -->
+                <tr>
+                  <td colspan="6" style="text-align: center;">Loading leaderboard data...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="leaderboard.js"></script>
+    <script src="nav-logic.js"></script>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="Profile.css" />
+    <link rel="stylesheet" href="admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <title>CCS Dashboard - Sessions</title>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <div class="nav">
+      <div class="logo">
+        <p class="dashboard-text">Dashboard</p>
+      </div>
+
+      <div class="links">
+        <a href="Profile.html">Home</a>
+        <a href="Profile.html#editprofile">Edit Profile</a>
+        <a href="summary.html">Sit-In Summary</a>
+        <a href="sessions.html" class="active">Sessions</a>
+        <a href="history.html">History</a>
+        <a href="Leaderboard.html">Leaderboard</a>
+        <a href="reservation.html">Reservation</a>
+      </div>
+
+      <div class="nav-actions">
+        <div class="notification-container">
+          <button id="notifBtn" class="notif-btn" title="Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span id="notifBadge" class="notif-badge" style="display: none;">0</span>
+          </button>
+          <div id="notifDropdown" class="notif-dropdown">
+            <div class="notif-header">
+              <h3>Notifications</h3>
+              <button id="markAllReadBtn">Mark all as read</button>
+            </div>
+            <div id="notifList" class="notif-list">
+              <div class="no-notif">No new notifications</div>
+            </div>
+          </div>
+        </div>
+        <button id="logoutBtn" class="logout-btn">Log Out</button>
+      </div>
+      
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      <div class="student-info-section">
+        <div class="section-header section-header-center">
+          <h2>My Sessions</h2>
+        </div>
+        
+        <div class="student-info-content">
+          <div class="student-table-controls">
+            <div class="entries-control">
+              <label>Show</label>
+              <select id="sessionEntriesSelect">
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select>
+              <label>Entries per page</label>
+            </div>
+            <div class="search-control">
+              <label>Search:</label>
+              <input type="text" id="sessionTableSearch" placeholder="Search sessions..." />
+            </div>
+          </div>
+          
+          <div class="student-table-container">
+            <table class="student-table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Time In</th>
+                  <th>Time Out</th>
+                  <th>Duration</th>
+                  <th>PC No.</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="sessionTableBody">
+                <!-- Session records will be loaded here -->
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="table-footer">
+            <div class="showing-entries" id="sessionShowingEntries">
+              Showing 0 to 0 of 0 entries
+            </div>
+            <div class="pagination">
+              <button class="pagination-btn" id="firstPage">&laquo;&laquo;</button>
+              <button class="pagination-btn" id="prevPage">&laquo;</button>
+              <span class="pagination-page" id="sessionCurrentPage">1</span>
+              <button class="pagination-btn" id="nextPage">&raquo;</button>
+              <button class="pagination-btn" id="lastPage">&raquo;&raquo;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="sessions.js"></script>
+    <script src="nav-logic.js"></script>
+  </body>
+</html>

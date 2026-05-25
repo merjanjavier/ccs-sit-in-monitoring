@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="Profile.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <title>CCS Dashboard - Profile</title>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <div class="nav">
+      <div class="logo">
+        <p class="dashboard-text">Dashboard</p>
+      </div>
+
+      <div class="links">
+        <a href="Profile.html" class="active">Home</a>
+        <a href="#editprofile">Edit Profile</a>
+        <a href="summary.html">Sit-In Summary</a>
+        <a href="sessions.html">Sessions</a>
+        <a href="history.html">History</a>
+        <a href="Leaderboard.html">Leaderboard</a>
+        <a href="reservation.html">Reservation</a>
+      </div>
+
+      <div class="nav-actions">
+        <div class="notification-container">
+          <button id="notifBtn" class="notif-btn" title="Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span id="notifBadge" class="notif-badge" style="display: none;">0</span>
+          </button>
+          <div id="notifDropdown" class="notif-dropdown">
+            <div class="notif-header">
+              <h3>Notifications</h3>
+              <button id="markAllReadBtn">Mark all as read</button>
+            </div>
+            <div id="notifList" class="notif-list">
+              <div class="no-notif">No new notifications</div>
+            </div>
+          </div>
+        </div>
+        <button id="logoutBtn" class="logout-btn">Log Out</button>
+      </div>
+      
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      <div class="dashboard-columns">
+        <!-- Student Information Column -->
+        <div class="column student-info-column">
+          <div class="column-header">
+            <h2>Student Information</h2>
+          </div>
+          <div class="student-info-content">
+            <!-- Profile Photo -->
+            <div class="profile-photo-section">
+              <div class="profile-photo">
+                <img src="./images/defaultpfp.jpg" alt="Profile Photo" id="profileImage" />
+              </div>
+            </div>
+            <div class="divider-line"></div>
+            
+            <!-- Student Details -->
+            <div class="student-details">
+              <div class="detail-item">
+                <span class="detail-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="black"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></span>
+                <span class="detail-label">Name:</span>
+                <span class="detail-value" id="studentName">Loading...</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="black"><path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg></span>
+                <span class="detail-label">Course:</span>
+                <span class="detail-value" id="studentCourse">Loading...</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="black"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg></span>
+                <span class="detail-label">Year:</span>
+                <span class="detail-value" id="studentYear">Loading...</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="black"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></span>
+                <span class="detail-label">Email:</span>
+                <span class="detail-value" id="studentEmail">Loading...</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="black"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>
+                <span class="detail-label">Address:</span>
+                <span class="detail-value" id="studentAddress">Loading...</span>
+              </div>
+              <div class="detail-item sessions-item">
+                <span class="detail-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="black"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></span>
+                <span class="detail-label">Sessions:</span>
+                <span class="detail-value sessions-value">
+                  <span class="clock-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="black"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></span>
+                  <span id="studentSessions">0</span> Sessions
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Announcement Column -->
+        <div class="column announcement-column">
+          <div class="column-header">
+            <h2><i class="fa-solid fa-bullhorn"></i> Announcement</h2>
+          </div>
+          <div class="announcement-content" id="announcementContainer">
+            <!-- Announcements will be loaded dynamically -->
+            <div class="announcement-item">
+              <div class="announcement-line">Loading announcements...</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rules and Regulations Column -->
+        <div class="column rules-column">
+          <div class="column-header">
+            <h2>Rules and Regulations</h2>
+          </div>
+          <div class="rules-content">
+            <div class="rules-header">
+              <h3>University of Cebu</h3>
+              <h4>COLLEGE OF INFORMATION & COMPUTER STUDIES</h4>
+              <h5>LABORATORY RULES AND REGULATIONS</h5>
+              <p class="rules-intro">To avoid embarassment and maintain camaraderie with your friends and superior at our laboratories please observe the following:</p>
+            </div>
+            <div class="rule-item">
+              <span class="rule-number">1.</span>
+              <p>Maintain silence, proper decorum and discipline inside the laboratory. Mobile phones and other personal pieces of equipment must be switched off.</p>
+            </div>
+            <div class="rule-item">
+              <span class="rule-number">2.</span>
+              <p>Games are not allowed inside the lab. This includes computer-related games, card games and other games that may disturb the operation of the lab.</p>
+            </div>
+            <div class="rule-item">
+              <span class="rule-number">3.</span>
+              <p>Surfing the Internet is allowed only with the permission of the instructor. Downloading and installing of the software strictly prohibited.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Edit Profile Modal -->
+    <div id="editProfileModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Edit Profile</h2>
+          <span class="close-btn" id="closeModalBtn">&times;</span>
+        </div>
+        <div class="modal-body">
+          <form id="editProfileForm">
+            <!-- Profile Photo in Edit Modal -->
+            <div class="edit-photo-section">
+              <div class="profile-photo">
+                <img src="./images/defaultpfp.jpg" alt="Profile Photo" id="editProfileImage" />
+                <label for="editPhotoInput" class="change-photo-btn">
+                  <i class="fa-solid fa-camera"></i>
+                </label>
+              </div>
+              <input type="file" id="editPhotoInput" accept="image/*" style="display: none;" />
+              <button type="button" id="removePhotoBtn" class="remove-photo-btn" style="margin-top: 10px; background-color: #dc3545; color: white; border: none; padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#c82333'" onmouseout="this.style.backgroundColor='#dc3545'">
+                <i class="fa-solid fa-trash"></i> Remove Photo
+              </button>
+            </div>
+            
+            <!-- Form Fields -->
+            <div class="form-group">
+              <label for="editFirstname">First Name</label>
+              <input type="text" id="editFirstname" name="firstname" required />
+            </div>
+            
+            <div class="form-group">
+              <label for="editLastname">Last Name</label>
+              <input type="text" id="editLastname" name="lastname" required />
+            </div>
+            
+            <div class="form-group">
+              <label for="editMiddlename">Middle Name</label>
+              <input type="text" id="editMiddlename" name="middlename" />
+            </div>
+            
+            <div class="form-group">
+              <label for="editCourse">Course</label>
+              <select id="editCourse" name="course" required>
+                <option value="">Select Course</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="editCourseLevel">Year Level</label>
+              <select id="editCourseLevel" name="courseLevel" required>
+                <option value="">Select Year Level</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="editEmail">Email</label>
+              <input type="email" id="editEmail" name="email" required />
+            </div>
+            
+            <div class="form-group">
+              <label for="editAddress">Address</label>
+              <input type="text" id="editAddress" name="address" required />
+            </div>
+            
+            <div class="form-buttons">
+              <button type="button" class="cancel-btn" id="cancelEditBtn">Cancel</button>
+              <button type="submit" class="save-btn">Save Changes</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="profile.js"></script>
+    <script src="nav-logic.js"></script>
+  </body>
+</html>
